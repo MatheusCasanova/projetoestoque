@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueWeb.Presentation", "EstoqueWeb.Presentation\EstoqueWeb.Presentation.csproj", "{B6EB5A6C-27B5-457E-BFBC-752FCA343BA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{4A1C67BC-A310-4A05-A041-70D4B9A43064}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Repository", "2 - Repository", "{5AAA6C35-9F3F-487A-A7B4-8FAA726F6A51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueWeb.Infra.Data", "EstoqueWeb.Infra.Data\EstoqueWeb.Infra.Data.csproj", "{807BF132-00C6-46C7-A1F2-E1D6A518DDFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Reports", "3 - Reports", "{71971BAE-DACE-47FE-A0B7-197049E62D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueWeb.Reports", "EstoqueWeb.Reports\EstoqueWeb.Reports.csproj", "{C8E79633-B943-49BF-BA7C-0E87550B0BB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6EB5A6C-27B5-457E-BFBC-752FCA343BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EB5A6C-27B5-457E-BFBC-752FCA343BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EB5A6C-27B5-457E-BFBC-752FCA343BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6EB5A6C-27B5-457E-BFBC-752FCA343BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807BF132-00C6-46C7-A1F2-E1D6A518DDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807BF132-00C6-46C7-A1F2-E1D6A518DDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807BF132-00C6-46C7-A1F2-E1D6A518DDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807BF132-00C6-46C7-A1F2-E1D6A518DDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E79633-B943-49BF-BA7C-0E87550B0BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E79633-B943-49BF-BA7C-0E87550B0BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E79633-B943-49BF-BA7C-0E87550B0BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E79633-B943-49BF-BA7C-0E87550B0BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B6EB5A6C-27B5-457E-BFBC-752FCA343BA2} = {4A1C67BC-A310-4A05-A041-70D4B9A43064}
+		{807BF132-00C6-46C7-A1F2-E1D6A518DDFE} = {5AAA6C35-9F3F-487A-A7B4-8FAA726F6A51}
+		{C8E79633-B943-49BF-BA7C-0E87550B0BB6} = {71971BAE-DACE-47FE-A0B7-197049E62D51}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5402F032-3EF2-47F9-82CB-F76413494777}
+	EndGlobalSection
+EndGlobal

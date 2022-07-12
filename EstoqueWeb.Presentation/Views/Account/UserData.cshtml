@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@using EstoqueWeb.Presentation.Models
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    //ler o conteudo json grava na sessão
+    var json = HttpContextAccessor.HttpContext.Session.GetString("usuario");
+
+    //deserializar o conteudo do JSON
+    var usuario = JsonConvert.DeserializeObject<UserIdentityModel>(json);
+}
+
+<h5>Dados do usuário autenticado:</h5>
+<hr/>
+
+<div class="mb-2">
+    ID do usuário: <strong>@usuario.Id</strong>
+</div>
+
+<div class="mb-2">
+    Nome do usuário: <strong>@usuario.Nome</strong>
+</div>
+
+<div class="mb-2">
+    Email do usuário: <strong>@usuario.Email</strong>
+</div>
+
+<div class="mb-2">
+    Data / Hora acesso ao sistema: <strong>@usuario.DataHoraAcesso</strong>
+</div>
+
+<div class="mb-2">
+    Cadastrado em: <strong>@usuario.DataInclusao</strong>
+</div>

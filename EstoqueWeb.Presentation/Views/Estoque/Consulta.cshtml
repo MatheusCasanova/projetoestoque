@@ -1,0 +1,97 @@
+﻿@* classe de modelo utilizada nesta página *@
+@model EstoqueWeb.Presentation.Models.ProdutoConsultaViewModel
+
+<h5>Consulta de Produtos</h5>
+<p>
+    Preencha os campos para consultar os produtos do seu estoque.
+</p>
+<hr/> 
+
+@using(Html.BeginForm())
+{
+    <div class="row mb-3">        
+        <div class="col-md-3">
+            <label>Data de ínicio:</label>
+            @Html.TextBoxFor(model => model.DataMin,
+                new { @type = "date", @class = "form-control" })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.DataMin)
+                </span>
+        </div>
+        <div class="col-md-3">
+            <label>Data de término:</label>
+            @Html.TextBoxFor(model => model.DataMax,
+                new { @type = "date", @class = "form-control" })
+                <span class="text-danger">
+                    @Html.ValidationMessageFor(model => model.DataMax)
+                </span>
+        </div>
+        <div class="col-md-6">
+             <br/>
+             @Html.RadioButtonFor(model => model.Ativo, "1") <span>Produtos Ativos</span> 
+             &nbsp;&nbsp;
+             @Html.RadioButtonFor(model => model.Ativo, "0") <span>Produtos Inativos</span> 
+             <br/>
+             <span class="text-danger">
+                 @Html.ValidationMessageFor(model => model.Ativo)
+             </span>
+         </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <input type="submit" value="Pesquisar Produtos" class="btn btn-success"/>
+        </div>
+    </div>
+}
+
+@if(Model != null && Model.Produtos != null && Model.Produtos.Count > 0)
+{
+ <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nome do produto</th>
+            <th>Data de validade</th>   
+            <th>Ativo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Produtos)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@Convert.ToDateTime(item.DataValidade).ToString("ddd, dd/MM/yyyy")</td>
+                <td>
+                        @if(item.Ativo == 0)
+                        {
+                            <span class="text-danger">Não</span>
+                        }
+                        else if(item.Ativo == 1)
+                        {
+                            <span class="text-success">Sim</span>
+                        }
+                    </td>
+                <td></td>
+                <td>
+                    <a href="/Estoque/Edicao?id=@item.Id" class="btn btn-primary btn-sm">
+                        Alterar
+                    </a>
+                    <a href="/Estoque/Exclusao?id=@item.Id"
+                        onclick="return-confirm('Deseja realmente excluir o produto: @item.Nome?');"
+                        class="btn btn-danger btn-sm">
+                        Excluir
+                    </a>
+                </td>
+            </tr>
+        }         
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                Quantidade de produtos: @Model.Produtos.Count
+            </td>
+        </tr>
+    </tfoot>
+</table>   
+}
