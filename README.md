@@ -11,7 +11,7 @@
 
  📁 Acesso ao projeto
  <p>Você pode acessar o código fonte do projeto 
-<a href="https://github.com/MatheusCasanova/apiempresas">clicando aqui</a>
+<a href="https://github.com/MatheusCasanova/projetoestoque">clicando aqui</a>
 </p>
 
 <h2>
